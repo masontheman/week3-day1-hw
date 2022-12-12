@@ -1,0 +1,46 @@
+class Cart:
+  valuee = 0
+  def __init__(self,  total = 0.0,items=dict()):
+    print('your choices are:\nadd: (item) , (price) , (quantity you want)\nremove: (item) , (the new quantity)\nshow: show the ticket')
+    self.items = items
+    items = dict()
+  def add(self,item,price,quantity =1,valuee =0):
+    self.quantity = quantity
+    self.item = item
+    self.price = price
+    self.items[item] = price*quantity
+    self.valuee = valuee
+    valuee = price*quantity
+    pass
+  def remove(self,item,):
+    self.item = item
+    del self.items[self.item]
+
+    pass
+  def show(self):
+    for key,value in self.items.items():
+      print(key,'----------',value,'$')
+    pass
+class Animal:
+  def __init__(self,name,energy = 5):
+    self.name = name 
+    self.energy = energy
+    pass
+  def eat(self,energy_from_eat = 5):
+    energy = self.energy + energy_from_eat
+    self.energy = energy
+    if energy < 0: return "george has died"
+    pass
+  def sleep(self,energy_from_sleep=100):
+    energy = self.energy + energy_from_sleep
+    self.energy = energy
+    if energy < 0: return "george has died"
+    pass
+  def play(self,energy_left_after_play=50):
+    self.energy_left_after_play = energy_left_after_play
+    energy = self.energy - energy_left_after_play
+    self.energy = energy
+    if energy < 0: return "george has died"
+    pass
+  def show(self):
+    print(self.energy)
